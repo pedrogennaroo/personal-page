@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Pessoal Moderna</title>
+    <title>Página Pessoal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -15,16 +15,17 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background-color: #f0f0f0;
-            color: #333;
+            background-color: #1c1c1c; /* Cinza muito escuro */
+            color: #e0e0e0;
             line-height: 1.6;
         }
 
         header, section, footer {
-            padding: 20px;
+            padding: 30px;
             margin: 20px;
-            background-color: white;
-            border-radius: 10px;
+            background-color: #2a2a2a; /* Cinza escuro */
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         h1, h2 {
@@ -34,7 +35,7 @@
 
         a {
             text-decoration: none;
-            color: #333;
+            color: #e0e0e0;
         }
 
         /* Navegação */
@@ -42,17 +43,27 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #4CAF50;
-            padding: 10px 20px;
+            background-color: #000; /* Preto */
+            padding: 15px 30px;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .logo {
-            font-size: 24px;
+            display: flex;
+            align-items: center;
+            font-size: 28px;
             font-weight: 600;
-            color: white;
+            color: #e0e0e0;
+        }
+
+        .logo img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
         }
 
         .nav-links {
@@ -61,19 +72,20 @@
         }
 
         .nav-links li {
-            margin-left: 20px;
+            margin-left: 25px;
         }
 
         .nav-links a {
-            color: white;
+            color: #e0e0e0;
             font-weight: 400;
-            padding: 8px 12px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .nav-links a:hover {
-            background-color: #45a049;
+            background-color: #333; /* Cinza escuro */
+            color: #ffda79; /* Amarelo */
         }
 
         .burger {
@@ -82,16 +94,16 @@
         }
 
         .burger div {
-            width: 25px;
+            width: 30px;
             height: 3px;
-            background-color: white;
-            margin: 5px;
+            background-color: #e0e0e0;
+            margin: 6px;
             transition: all 0.3s ease;
         }
 
         /* Seção Hero */
         .hero-section {
-            background-image: url('https://via.placeholder.com/1500x800');
+            background-image: url('https://img.freepik.com/fotos-gratis/renderizacao-3d-de-fundo-geometrico-preto-e-branco-abstrato_23-2150853539.jpg?t=st=1723567912~exp=1723571512~hmac=07a816d656ba4d944fb4d1d884d10fc771f99ef70c010bfa79af109412ba28fa&w=900');
             background-size: cover;
             background-position: center;
             height: 80vh;
@@ -99,16 +111,17 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            color: white;
+            color: #fff;
         }
 
         .hero-content h1 {
-            font-size: 48px;
+            font-size: 50px;
+            margin-bottom: 10px;
             animation: fadeIn 2s ease-in-out;
         }
 
         .hero-content p {
-            font-size: 24px;
+            font-size: 22px;
             margin-bottom: 20px;
             animation: fadeIn 2s ease-in-out 0.5s;
         }
@@ -119,26 +132,27 @@
 
         .btn {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 12px 24px;
             font-size: 18px;
-            background-color: #4CAF50;
-            color: white;
+            background-color: #000;
+            color: #e0e0e0;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
             animation: fadeIn 2s ease-in-out 1s;
         }
 
         .btn:hover {
-            background-color: #45a049;
+            background-color: #333;
+            transform: scale(1.05);
         }
 
         /* Sobre Mim */
         #about {
-            background-color: #fff;
+            background-color: #2a2a2a;
             padding: 40px;
-            border-radius: 10px;
+            border-radius: 12px;
             animation: fadeIn 2s ease-in-out;
         }
 
@@ -157,48 +171,57 @@
         .portfolio-item {
             position: relative;
             overflow: hidden;
-            border-radius: 10px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             animation: slideIn 1s ease-out;
         }
 
         .portfolio-item img {
             width: 100%;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
+            border-radius: 12px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
         }
 
         .portfolio-item:hover img {
             transform: scale(1.1);
+            opacity: 0.8;
         }
 
         .portfolio-info {
             position: absolute;
             bottom: 0;
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.8);
             color: white;
             width: 100%;
             text-align: center;
-            padding: 10px;
-            border-radius: 0 0 10px 10px;
+            padding: 15px;
+            border-radius: 0 0 12px 12px;
+            transition: background-color 0.3s ease;
+        }
+
+        .portfolio-item:hover .portfolio-info {
+            background-color: rgba(0, 0, 0, 0.6);
         }
 
         /* Contato */
         #contact {
-            background-color: #fff;
+            background-color: #2a2a2a;
             padding: 40px;
-            border-radius: 10px;
+            border-radius: 12px;
             animation: fadeIn 2s ease-in-out;
         }
 
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         input, textarea {
             width: 100%;
             padding: 15px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
+            border-radius: 8px;
+            border: 1px solid #444;
+            background-color: #333;
+            color: #e0e0e0;
         }
 
         textarea {
@@ -209,11 +232,11 @@
         /* Rodapé */
         footer {
             text-align: center;
-            padding: 20px;
-            background-color: #333;
-            color: white;
+            padding: 25px;
+            background-color: #000;
+            color: #e0e0e0;
             margin-top: 40px;
-            border-radius: 10px;
+            border-radius: 12px;
         }
 
         .social-icons {
@@ -221,9 +244,9 @@
         }
 
         .social-icons a {
-            color: white;
-            margin: 0 10px;
-            font-size: 24px;
+            color: #e0e0e0;
+            margin: 0 12px;
+            font-size: 28px;
             transition: color 0.3s ease;
         }
 
@@ -240,12 +263,12 @@
                 position: absolute;
                 top: 60px;
                 left: 0;
-                background-color: #4CAF50;
+                background-color: #000;
             }
 
             .nav-links li {
                 text-align: center;
-                padding: 10px;
+                padding: 12px 0;
             }
 
             .nav-links.active {
@@ -277,17 +300,6 @@
             }
         }
 
-        @keyframes burgerToggle {
-            from {
-                opacity: 0;
-                transform: rotate(0deg);
-            }
-            to {
-                opacity: 1;
-                transform: rotate(90deg);
-            }
-        }
-
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -313,7 +325,10 @@
 </head>
 <body>
     <nav>
-        <div class="logo">Meu Logo</div>
+        <div class="logo">
+            <img src=" ">
+         Página inicial
+        </div>
         <ul class="nav-links">
             <li><a href="#about">Sobre Mim</a></li>
             <li><a href="#portfolio">Portfólio</a></li>
@@ -328,17 +343,17 @@
 
     <header class="hero-section">
         <div class="hero-content">
-            <h1>Olá, meu nome é <span class="highlight">Pedro Gennaro</span></h1>
+            <h1>Olá, eu sou Pedro Gennaro</h1>
             <p>Estudante</p>
-            <a href="#contact" class="btn">Fale Comigo</a>
+            <a href="#contact" class="btn">Entre em Contato</a>
         </div>
     </header>
 
     <section id="about">
         <h2>Sobre Mim</h2>
-        <p>Tenho 16 anos, nasci no dia  19/05/2008,  Estudo no Sesi 165 e no SENAI, faço curso técnico de DEV, e pretendo seguir na área. </p>
-        <p><strong>Localização:</strong> São Paulo, Brasil</p>
-        <p><strong>Hobbies:</strong> Gosto muito praticar esportes ao ar livre, como corrida andar de bicicleta,vou muito na academia e toco violão.</p>
+        <p>Olá! Meu nome é Pedro Gennaro de Oliveira tenho 16 anos, nasci no dia 19/05/2008 e sou um desenvolvedor apaixonado crio soluções inovadoras e funcionais. Tenho experiência em desenvolvimento web e desenvolvimento de sistemas, e estou sempre buscando aprender e crescer na minha área. Atualmente, estou estudando no Sesi 165 e no SENAI, fazendo um curso técnico de Desenvolvimento, e pretendo seguir na área.</p>
+        <p><strong>Localização:</strong> Piracicaba, São Paulo, Brasil</p>
+        <p><strong>Hobbies:</strong> Gosto muito de praticar esportes ao ar livre, como corrida, andar de bicicleta, vou muito na academia e toco violão.</p>
     </section>
 
     <section id="portfolio">
@@ -388,43 +403,22 @@
             </div>
             <button type="submit" class="btn">Enviar</button>
         </form>
-        <div id="formFeedback" style="display:none;"></div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Pedro Gennaro de Oliveira. Todos os direitos reservados.</p>
+         <p>&copy; 2024 Pedro Gennaro. Todos os direitos reservados.</p>
+        <p>Gmail: pedrogenoliv@gmail.com</p>
         <div class="social-icons">
-            <a href="https://www.instagram.com/pedrogennaroo/?__d=11" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/qr/CL4VEHMYS5PWH1" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://wa.me/qr/CL4VEHMYS5PWH1" target="_blank" class="fab fa-whatsapp"></a>
+            <a href="https://www.instagram.com/pedrogennaroo/?__d=11" target="_blank" class="fab fa-instagram"></a>
         </div>
+
+
     </footer>
 
     <script>
         document.querySelector('.burger').addEventListener('click', () => {
             document.querySelector('.nav-links').classList.toggle('active');
-            document.querySelector('.burger').classList.toggle('toggle');
-        });
-
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const formData = new FormData(this);
-
-            fetch('processa_formulario.php', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.text())
-            .then(data => {
-                const feedback = document.getElementById('formFeedback');
-                feedback.style.display = 'block';
-                feedback.innerText = 'Mensagem enviada com sucesso!';
-                this.reset();
-            })
-            .catch(error => {
-                const feedback = document.getElementById('formFeedback');
-                feedback.style.display = 'block';
-                feedback.innerText = 'Ocorreu um erro ao enviar a mensagem. Tente novamente.';
-            });
         });
     </script>
 </body>
