@@ -3,423 +3,400 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Pessoal</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Clarinha e Pedrinho</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/256/11053/11053774.png" type="image/png">
     <style>
-        /* Configurações Globais */
+        /* Estilos globais */
         body {
             font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #2b2b2b, #1a1a1a);
+            color: #f4c242; /* Amarelo */
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            background-color: #1c1c1c; /* Cinza muito escuro */
-            color: #e0e0e0;
-            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        header, section, footer {
-            padding: 30px;
-            margin: 20px;
-            background-color: #2a2a2a; /* Cinza escuro */
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        h1, h2 {
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-
-        a {
-            text-decoration: none;
-            color: #e0e0e0;
-        }
-
-        /* Navegação */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #000; /* Preto */
-            padding: 15px 30px;
+        /* Cabeçalho */
+        header {
+            background-color: #f4c242; /* Amarelo */
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            border-bottom: 5px solid #000000; /* Preto */
+            animation: headerDrop 1.2s ease-in-out;
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            font-size: 28px;
-            font-weight: 600;
-            color: #e0e0e0;
+        h1 {
+            margin: 0;
+            font-size: 3em;
+            font-weight: 700;
+            color: #222; /* Preto */
+            letter-spacing: 3px;
         }
 
-        .logo img {
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            margin-right: 15px;
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 15px 0 0 0;
         }
 
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 25px;
-        }
-
-        .nav-links a {
-            color: #e0e0e0;
-            font-weight: 400;
-            padding: 10px 15px;
-            border-radius: 8px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            background-color: #333; /* Cinza escuro */
-            color: #ffda79; /* Amarelo */
-        }
-
-        .burger {
-            display: none;
-            cursor: pointer;
-        }
-
-        .burger div {
-            width: 30px;
-            height: 3px;
-            background-color: #e0e0e0;
-            margin: 6px;
-            transition: all 0.3s ease;
-        }
-
-        /* Seção Hero */
-        .hero-section {
-            background-image: url('https://img.freepik.com/fotos-gratis/renderizacao-3d-de-fundo-geometrico-preto-e-branco-abstrato_23-2150853539.jpg?t=st=1723567912~exp=1723571512~hmac=07a816d656ba4d944fb4d1d884d10fc771f99ef70c010bfa79af109412ba28fa&w=900');
-            background-size: cover;
-            background-position: center;
-            height: 80vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: #fff;
-        }
-
-        .hero-content h1 {
-            font-size: 50px;
-            margin-bottom: 10px;
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        .hero-content p {
-            font-size: 22px;
-            margin-bottom: 20px;
-            animation: fadeIn 2s ease-in-out 0.5s;
-        }
-
-        .hero-content .highlight {
-            color: #ffda79;
-        }
-
-        .btn {
+        nav ul li {
             display: inline-block;
-            padding: 12px 24px;
-            font-size: 18px;
-            background-color: #000;
-            color: #e0e0e0;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            animation: fadeIn 2s ease-in-out 1s;
+            margin: 0 15px;
         }
 
-        .btn:hover {
-            background-color: #333;
-            transform: scale(1.05);
+        nav ul li a {
+            color: #222; /* Preto */
+            text-decoration: none; /* Remove o sublinhado */
+            font-size: 1.3em;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            padding: 8px;
+            border-radius: 10px;
         }
 
-        /* Sobre Mim */
-        #about {
-            background-color: #2a2a2a;
-            padding: 40px;
-            border-radius: 12px;
-            animation: fadeIn 2s ease-in-out;
+        nav ul li a:hover {
+            color: #fff; /* Branco */
+            background-color: #000000; /* Preto */
+            transition: background-color 0.3s;
         }
 
-        /* Portfólio */
-        #portfolio {
-            padding: 40px;
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        .portfolio-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .portfolio-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            animation: slideIn 1s ease-out;
-        }
-
-        .portfolio-item img {
-            width: 100%;
-            border-radius: 12px;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-        }
-
-        .portfolio-item:hover img {
-            transform: scale(1.1);
-            opacity: 0.8;
-        }
-
-        .portfolio-info {
-            position: absolute;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.8);
-            color: white;
-            width: 100%;
+        /* Seções */
+        section {
+            padding: 60px 20px;
             text-align: center;
-            padding: 15px;
-            border-radius: 0 0 12px 12px;
+            max-width: 1200px;
+            margin: 0 auto;
+            color: #f4c242; /* Amarelo */
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            color: #f4c242; /* Amarelo */
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            border-bottom: 2px solid #f4c242; /* Amarelo */
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        /* Estilo do carrossel */
+        .carousel {
+            position: relative;
+            max-width: 300px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            background-color: #222;
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .active {
+            display: block;
+            opacity: 1;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 14px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            border-radius: 50%;
             transition: background-color 0.3s ease;
         }
 
-        .portfolio-item:hover .portfolio-info {
-            background-color: rgba(0, 0, 0, 0.6);
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
         }
 
-        /* Contato */
-        #contact {
-            background-color: #2a2a2a;
-            padding: 40px;
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* Estilo do Spotify Embed */
+        .spotify-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .spotify-embed {
+            flex: 1 0 30%;
+            max-width: 300px;
             border-radius: 12px;
-            animation: fadeIn 2s ease-in-out;
+            overflow: hidden;
         }
 
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        input, textarea {
+        iframe {
+            border: none;
             width: 100%;
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid #444;
-            background-color: #333;
-            color: #e0e0e0;
-        }
-
-        textarea {
-            height: 150px;
-            resize: none;
-        }
-
-        /* Rodapé */
-        footer {
-            text-align: center;
-            padding: 25px;
-            background-color: #000;
-            color: #e0e0e0;
-            margin-top: 40px;
+            height: 352px;
             border-radius: 12px;
         }
 
-        .social-icons {
-            margin-bottom: 10px;
+        /* Estilo da seção Extras */
+        .extras {
+            background-color: #333;
+            padding: 60px 20px;
+            text-align: center;
+            color: #f4c242; /* Amarelo */
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
 
-        .social-icons a {
-            color: #e0e0e0;
-            margin: 0 12px;
-            font-size: 28px;
-            transition: color 0.3s ease;
+        .extras h2 {
+            font-size: 2.5em;
+            color: #f4c242; /* Amarelo */
+            margin-bottom: 40px;
+            letter-spacing: 2px;
         }
 
-        .social-icons a:hover {
-            color: #ffda79;
+        .extras p {
+            font-size: 1.4em;
+            color: #f4c242; /* Amarelo */
+            line-height: 1.7em;
+            margin-top: 30px;
+        }
+
+        /* Estilo do botão de amor */
+        .love-button {
+            display: block;
+            width: 300px;
+            height: 60px;
+            margin: 40px auto;
+            background-color: #f4c242; /* Amarelo */
+            color: #222; /* Preto */
+            border: none;
+            border-radius: 30px;
+            font-size: 1.5em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .love-button:hover {
+            background-color: #222; /* Preto */
+            color: #f4c242; /* Amarelo */
+        }
+
+        /* Animações */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes headerDrop {
+            from {
+                transform: translateY(-100px);
+            }
+            to {
+                transform: translateY(0);
+            }
         }
 
         /* Responsividade */
         @media screen and (max-width: 768px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                background-color: #000;
+            h1 {
+                font-size: 2.4em;
             }
 
-            .nav-links li {
-                text-align: center;
-                padding: 12px 0;
+            h2 {
+                font-size: 2.2em;
             }
 
-            .nav-links.active {
-                display: flex;
+            nav ul li a {
+                font-size: 1.1em;
             }
 
-            .burger {
-                display: block;
+            .carousel {
+                max-width: 250px;
             }
 
-            .hero-content h1 {
-                font-size: 36px;
+            .spotify-embed {
+                max-width: 250px;
             }
 
-            .hero-content p {
-                font-size: 18px;
+            .extras {
+                padding: 40px 20px;
             }
         }
 
-        /* Animações */
-        @keyframes navLinkFade {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
+        @media screen and (max-width: 480px) {
+            h1 {
+                font-size: 2em;
             }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
+            h2 {
+                font-size: 1.8em;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
 
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
+            nav ul li a {
+                font-size: 1em;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+
+            .carousel {
+                max-width: 200px;
+            }
+
+            .spotify-embed {
+                max-width: 200px;
+            }
+
+            p {
+                font-size: 1.2em;
+            }
+
+            .extras {
+                padding: 30px 10px;
             }
         }
     </style>
 </head>
 <body>
-    <nav>
-        <div class="logo">
-            <img src=" ">
-         Página inicial
-        </div>
-        <ul class="nav-links">
-            <li><a href="#about">Sobre Mim</a></li>
-            <li><a href="#portfolio">Portfólio</a></li>
-            <li><a href="#contact">Contato</a></li>
-        </ul>
-        <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
-    </nav>
-
-    <header class="hero-section">
-        <div class="hero-content">
-            <h1>Olá, eu sou Pedro Gennaro</h1>
-            <p>Estudante</p>
-            <a href="#contact" class="btn">Entre em Contato</a>
-        </div>
+    <header>
+        <h1>Pra minha Mariazinha💛</h1>
+        <nav>
+            <ul>
+                <li><a href="#fotos">Fotos📷</a></li>
+                <li><a href="#musica">Músicas🎶</a></li>
+                <li><a href="#declaracoes">Declarações💞</a></li>
+                <li><a href="#extras">Extras✨</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section id="about">
-        <h2>Sobre Mim</h2>
-        <p>Olá! Meu nome é Pedro Gennaro de Oliveira tenho 16 anos, nasci no dia 19/05/2008 e sou um desenvolvedor apaixonado crio soluções inovadoras e funcionais. Tenho experiência em desenvolvimento web e desenvolvimento de sistemas, e estou sempre buscando aprender e crescer na minha área. Atualmente, estou estudando no Sesi 165 e no SENAI, fazendo um curso técnico de Desenvolvimento, e pretendo seguir na área.</p>
-        <p><strong>Localização:</strong> Piracicaba, São Paulo, Brasil</p>
-        <p><strong>Hobbies:</strong> Gosto muito de praticar esportes ao ar livre, como corrida, andar de bicicleta, vou muito na academia e toco violão.</p>
+    <section id="fotos">
+        <h2>Algumas Fotos de nós KKK</h2>
+        <div class="carousel">
+            <img src="img/Foto1.jpg" class="slide active">
+            <img src="img/Foto2.jpg" class="slide">
+            <img src="img/Foto3.jpg" class="slide">
+            <img src="img/Foto4.jpg" class="slide">
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
     </section>
 
-    <section id="portfolio">
-        <h2>Portfólio</h2>
-        <div class="portfolio-gallery">
-            <!-- Projeto 1 -->
-            <div class="portfolio-item">
-                <img src="https://via.placeholder.com/600x400" alt="Projeto 1">
-                <div class="portfolio-info">
-                    <h3>Projeto 1</h3>
-                    <p>Descrição breve do projeto 1.</p>
-                </div>
+    <section id="musica">
+        <h2>Nossas Músicas </h2>
+        <div class="spotify-container">
+            <div class="spotify-embed">
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2NnSYdNhqye00il4nRB4tj?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
-            <!-- Projeto 2 -->
-            <div class="portfolio-item">
-                <img src="https://via.placeholder.com/600x400" alt="Projeto 2">
-                <div class="portfolio-info">
-                    <h3>Projeto 2</h3>
-                    <p>Descrição breve do projeto 2.</p>
-                </div>
+            <div class="spotify-embed">
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0yc6Gst2xkRu0eMLeRMGCX?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
-            <!-- Projeto 3 -->
-            <div class="portfolio-item">
-                <img src="https://via.placeholder.com/600x400" alt="Projeto 3">
-                <div class="portfolio-info">
-                    <h3>Projeto 3</h3>
-                    <p>Descrição breve do projeto 3.</p>
-                </div>
+            <div class="spotify-embed">
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7FikD4RFpmSZIvoP3rRwsS?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="spotify-embed">
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2NnSYdNhqye00il4nRB4tj?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="spotify-embed">
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6hFKP7kl22184msxWDhXLL?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="spotify-embed">
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/36i9NcqbdQFdQfOROpIwMA?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="spotify-embed">
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0tgVpDi06FyKpA1z0VMD4v?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="spotify-embed">
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3AJwUDP919kvQ9QcozQPxg?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="spotify-embed">
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5XeFesFbtLpXzIVDNQP22n?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
         </div>
     </section>
 
-    <section id="contact">
-        <h2>Contato</h2>
-        <form id="contactForm" action="processa_formulario.php" method="post">
-            <div class="form-group">
-                <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Mensagem:</label>
-                <textarea id="message" name="message" required></textarea>
-            </div>
-            <button type="submit" class="btn">Enviar</button>
-        </form>
+    <section id="declaracoes">
+        <h2>Minha Declaração</h2>
+        <p>Oioi Clarinha, fiz tudo isso p vc kk, pode não parecer grande coisa e a coisa mais fácil do mundo de se fazer kkk, mas c n faz ideia do quanto demorou e o quanto foi dificil kkk, tive q quebrar a cabeça KKK, mas isso n importa, o que importa é q foi p vc e q fiz com muito amor e carinho, meu plano é com o tempo ir colocando mais coisas sabe kkk, conforme a gente for tirando fotos, novas musicas, com o tempo ir colocando mais coisa.
+            bom primeiramente qria dizer que te amo pra caralho, e não é pouco não, não tenho nem palavras o suficiente para expressar o tamanho desse amor, você é a minha cara metade Clarinha, a peçinha que faltava no meu quebra cabeça, a luz q ilumina o meu caminho durante a noite,o A do meu Mor kkk, você é a minha alma gêmea. Tudo oq eu sempre sonhei e sempre quis, você é todos os meus sonhos em forma de pessoa kk, é a pessoa q só com uma mensagem consegue alegrar meu dia,
+            e me tirar um sorriso sincero kkk, saiba q eu te qro comigo, qro acordar com um bom dia seu td dia, dormir com um boa noite seu, qro ser seu Clarinha, você é uma menina mt especial p mim, e me apaixonei por vc por todos os pequenos detalhes seus kkk, seu jeitinho lelé q me deixou doidinho kkk, seu jeito de demonstrar o amor, por cartas, bilhetinhos, beijos, abraços, ficar de conchinha kkk, sua aparencia inteira kk, seus pézinhos q vc sempre teve vergonha kk,
+            suas unhas q sempre quebravam kkk, suas mãozinhas q eu adoro fazer carinho, suas pernas, seus braços, seu nariz, sua boquinha q vc diz ser mt pequena (p mim p pft kkk), seu sorisso lindo p crlh, seus olhos kkk e porra q olhos, seu cabelo multicolor kkk, enfim, amo você inteira clarinha, todos os seus pequenos detalhes. Ainda quero passar muito tempo ao seu lado, poder te olhos e dizer q te amo, qro ter ainda muitos momentos com você, e porra como eu errei clara,
+            errei muito, e n vou me perdoar nk por isso, errei em falar q já deu oq tinha q dar, vacilei e feio, mas os erros do passado nós não podemos mudar, apenas viver o presente e o nosso futuro, mas eu mudei e foi por vc, pra te fazer feliz de verdade, pra se sentir amada, como você merece, e por isso estou aq kkk 100% disposto a dar certo com você, me entregando de corpo e alma p vc, p ter algo bom e duradouro cntg, te levar p sair, te ver todos os dias, dar risada p crlh cm vc kkk,
+            ter vários momentos incrivéis ao seu lado clarinha, eu sei e sinto do fundo do meu coração q n é esse o fim, a gente ainda tem mt a fzr, viver momentos inimagináveis juntos eu i vc vc i eu kkk, fazer vc se sentir especial, só preciso de uma oportunidade meu amor. Não quero ter q me despedir de você p sempre, é muito tempo kk, qro viver por vc clarinha. Qro dar certo de verdade, do fundo do meu coração, só preciso de uma chance pra te mostrar isso.
+            Não qro só te olhar de longe e pensar q nk mais vamos ser namorados d vdd, me da essa oportunidade pra namorarmos pra valer clarinha, com todas as ultimas forças q nós dois temos, vamos fazer dar certo, espero q vc pense bem kkk, amo vc, ainda quero ser seu namorado kk 💛
+        </p>
     </section>
 
-    <footer>
-         <p>&copy; 2024 Pedro Gennaro. Todos os direitos reservados.</p>
-        <p>Gmail: pedrogenoliv@gmail.com</p>
-        <div class="social-icons">
-            <a href="https://wa.me/qr/CL4VEHMYS5PWH1" target="_blank" class="fab fa-whatsapp"></a>
-            <a href="https://www.instagram.com/pedrogennaroo/?__d=11" target="_blank" class="fab fa-instagram"></a>
+    <section id="extras" class="extras">
+        <h2>Extras✨</h2>
+        <p> Bom kkkk, você sabe q eu gostaria mt de sair p conversar e caso você aceite sair comigo pra gente conversar, a localização tá ai, n vai custar nd kkkk eu só qro te olhar nos olhos e dizer o que eu qro de vdd</p>
+        <p> Quinta 26/09 as 16:00 </p>
+        <div class="map-container">
+              <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3663.097773298237!2d-47.6428669253977!3d-22.717536928339176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c63108e13f781b%3A0x178fc251ffec5a21!2sR.%20Carlos%20Cossa%2C%2014%20-%20Jardim%20Caxambu%2C%20Piracicaba%20-%20SP%2C%2013425-035!5e0!3m2!1spt-BR!2sbr!4v1695130003894!5m2!1spt-BR!2sbr"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
+        
+    </section>
 
-
-    </footer>
-
+    <button class="love-button" onclick="showLoveMessage()">Eu te amo💛</button>
+    <p class="click-here">ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤClique aqui ☝</p>
     <script>
-        document.querySelector('.burger').addEventListener('click', () => {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
+        let slideIndex = 0;
+        const slides = document.querySelectorAll(".slide");
+
+        function showSlides() {
+            slides.forEach((slide, index) => {
+                slide.style.display = "none";
+            });
+            slides[slideIndex].style.display = "block";
+        }
+
+        function changeSlide(n) {
+            slideIndex = (slideIndex + n + slides.length) % slides.length;
+            showSlides();
+        }
+
+        setInterval(() => {
+            changeSlide(1);
+        }, 4000); // Troca a cada 4 segundos
+
+        showSlides();
+
+        function showLoveMessage() {
+            alert("Volta pra mim meu amor, sinto mt sua falta");
+        }
     </script>
 </body>
 </html>
